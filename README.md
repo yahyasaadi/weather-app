@@ -1,0 +1,1 @@
+### A simple weather app made using [OpenWeather API](https://openweathermap.org/)

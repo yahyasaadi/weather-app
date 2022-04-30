@@ -1,0 +1,109 @@
+{% extends 'the_app/base.html' %}
+
+{% block content %}
+
+
+    <section class="boxes">
+        <!-- AFRICA -->
+        <h3 class="continent" >African</h3>
+        <div class="container">
+            {% for city_weather in cities_Africa %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- NORTH AMERICA -->
+        <h3 class="continent" >North America</h3>
+        <div class="container">
+            {% for city_weather in cities_N_America %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- SOUTH AMERICA -->
+        <h3 class="continent" >South America</h3>
+        <div class="container">
+            {% for city_weather in cities_S_America %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- MIDDLE EAST -->
+        <h3 class="continent" >Middle East</h3>
+        <div class="container">
+            {% for city_weather in middle_East %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- EUROPE -->
+        <h3 class="continent" >Europe</h3>
+        <div class="container">
+            {% for city_weather in europe %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- ASIA -->
+        <h3 class="continent" >Asia</h3>
+        <div class="container">
+            {% for city_weather in asia %}
+                <div class="box">
+                    <img src="http://openweathermap.org/img/w/{{ city_weather.icon }}.png" alt="Icon">
+                    <h5>{{ city_weather.city }}</h5>
+                    <p>
+                        {{ city_weather.temprature }} °C
+                    </p>
+                    <small>
+                        {{ city_weather.description }}
+                    </small>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'the_app/main.css' %}">
+    <title>The Weather App</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">What's the weather like?</div>
+            <ul class="nav">
+                <li>
+                    <a href="{% url 'home' %}">Home</a>
+                </li>
+                <!-- <li>
+                    <a href="#home">View in F</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="alerts">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <section class="search">
+        <div class="form">
+            <form method="POST" action="{% url 'search' %}">
+                {% csrf_token %}
+                <input type="text" name="city">
+                <button class="btn-submit" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    {% block content %}{% endblock %}
+    
+    <footer class="footer">
+        <p>
+            Data fetched from <a href="https://openweathermap.org/">openweathermap.org</a>
+        </p>
+    </footer>
+    
+</body>
+</html>

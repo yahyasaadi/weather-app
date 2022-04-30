@@ -1,0 +1,16 @@
+{% extends 'the_app/base.html' %}
+
+{% block content %}
+    <div class="container">
+            <div class="box">
+                <img src="http://openweathermap.org/img/w/{{ weather_info.icon }}.png" alt="Icon">
+                <h5>{{ weather_info.city }}</h5>
+                <p>
+                    {{ weather_info.temprature }} °C
+                </p>
+                <small>
+                    {{ weather_info.description }}
+                </small>
+            </div>
+    </div>
+{% endblock %}
