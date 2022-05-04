@@ -10,6 +10,24 @@ api_key = os.environ.get('OPEN_WEATHER_API')
 url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
 
 def home(request):
+
+    # # ALL
+    # cities = City.objects.all()
+
+    # all_cities = []
+    # for city in cities:
+    #     results = requests.get(url.format(city, api_key)).json()
+
+    #     # Dict to hold info
+    #     temp_in_f = results['main']['temp'] - 273.15
+    #     # print(city.continent)
+    #     weather_info = {
+    #         'city': city,
+    #         'description': results['weather'][0]['description'],
+    #         'temprature': format(temp_in_f, '.2f'),
+    #         'icon': results['weather'][0]['icon']
+    #     }
+    #     all_cities.append(weather_info)
     
     # AFRICA
     afircan_cities = City.objects.filter(continent='Africa')
@@ -119,7 +137,8 @@ def home(request):
         'cities_S_America': cities_S_America,
         'middle_East': middle_East,
         'europe': europe,
-        'asia': asia
+        'asia': asia,
+        # 'all_cities': all_cities
     }
     return render(request, 'the_app/home.html', context)
 
